@@ -4,7 +4,8 @@ public class UIMAnager : MonoBehaviour
 {
     private float fill = 0;
     private float _amountOfCapsules;
-    [SerializeField] private Image ProgressBar;
+    [SerializeField] private Image _progressBar;
+    [SerializeField] private GameObject _startPanel;
     private void Start()
     {
         _amountOfCapsules = GetComponent<ScenesManager>()._capsulesAmount;
@@ -16,6 +17,12 @@ public class UIMAnager : MonoBehaviour
         {
             fill = GetComponent<ScenesManager>()._capsulesCounter / _amountOfCapsules;
         }
-        ProgressBar.fillAmount = fill;
+        _progressBar.fillAmount = fill;
+    }
+
+    public void StartGame()
+    {
+        GameObject.Find("Brusher").GetComponent<BrusherStartChanger>().GetDown();
+        Destroy(_startPanel);
     }
 }

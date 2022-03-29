@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Capsule
   - Brusher
+  - Roof
   layers:
   - Default
   - TransparentFX
